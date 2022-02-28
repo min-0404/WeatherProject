@@ -6,11 +6,13 @@
 </head>
 <body>
 
-<h3>메인화면입니다</h3>
+<h3>메인 페이지</h3>
+<!--기능 1 : fetch 를 이용해 원하는 json 데이터 호출하기-->
 <div>
     <button onclick="getJson()">데이터 불러오기</button>
 </div>
 
+<!--기능 2 : 지역명 입력하고 날씨 검색하기 -->
 <div>
     <form th:action="@{/weather-result}" method="post">
         <input type="text" th:name="location">
