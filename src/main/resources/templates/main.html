@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>메인화면입니다</h3>
+<div>
+    <button onclick="getJson()">데이터 불러오기</button>
+</div>
+
+<div>
+    <form th:action="@{/weather-result}" method="post">
+        <input type="text" th:name="location">
+        <button type="submit">전송</button>
+    </form>
+</div>
+
+<script>
+    function getJson(){
+        let url = "/weather";
+        let jsonArr = new Object();
+        jsonArr = [{"seoul":30},{"suwon":20},{"busan":25}];
+
+        fetch(url, {
+            method:"post",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(jsonArr)
+        }).then(res => {
+            console.log(res);
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
+</script>
+
+</body>
+</html>
+

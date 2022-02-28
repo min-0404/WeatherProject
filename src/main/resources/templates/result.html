@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>결과화면</h3>
+
+<li>검색한 지역</li>
+<li th:text="${location}"></li>
+<li>검색결과</li>
+<li th:text="${result}"></li>
+
+<button th:onclick="|location.href='@{}'|">메인으로</button>
+</body>
+</html>
